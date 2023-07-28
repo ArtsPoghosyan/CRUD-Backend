@@ -1,0 +1,32 @@
+<%- include('./components/header') %>
+<title><%= title %></title>
+
+<form action="/delete" method="post">
+    <div class="login-wrap">
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab tab1">Delete</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-in" checked><label for="tab-2" class="tab"><a href="/create">Create</a></label>
+            <input id="tab-3" type="radio" name="tab" class="sign-in" checked><label for="tab-3" class="tab"><a href="/read">Read</a></label>
+            <input id="tab-4" type="radio" name="tab" class="sign-in" checked><label for="tab-4" class="tab"><a href="/update">Update</a></label>
+            <div class="login-form">
+                <div class="sign-in-htm">
+                    <div class="group">
+                        <label for="id" class="label">Id for delete</label>
+                        <input id="id" type="text" class="input" name="_id">
+                    </div>
+                    <div class="group" style="margin-top: 30px;">
+                        <label for="email" class="label">Email for delete</label>
+                        <input id="email" type="text" class="input" name="email">
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Delete User">
+                    </div>
+                </div>
+            </div>
+            <h4 style="color:mediumspringgreen; margin: 0 auto; width: max-content;"><%= message ? message : "" %></h4>
+            <h4 style="color: brown; margin: 0 auto; width: max-content;"><%= errorMessage ? errorMessage : "" %></h4>
+        </div>
+    </div>
+</form>
+
+<%- include('./components/footer') %>
